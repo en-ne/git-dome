@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360浏览器</title>
+    <!-- 引入css文件 -->
+    <link rel="stylesheet" href="./css/fullpage.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/fullpage.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="headerContent">
+            <img src="./images/logo.png" alt="">
+            <div class="nav">
+                <a href="#">论坛</a>
+                <a href="#">扩展</a>
+                <a href="#">Mac版</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全屏滚动 -->
+    <div id="dowebok">
+        <div class="section section1">
+            <!-- 标题模块 -->
+            <div class="title-box">
+                <p>畅快浏览 极致体验</p>
+                <a href="#"></a>
+            </div>
+            <!-- 第一个小球 -->
+            <img src="./images/ball1.png" alt="" class="ball1">
+            <!-- 第二个大球 -->
+            <img src="./images/ball2.png" alt="" class="ball2">
+            <!-- 卫星 -->
+            <img src="./images/ship.png" alt="" class="ship">
+        </div>
+        <div class="section">
+            <!-- autoplay:自动播放 loop:无限播放 muted: 静音播放-->
+            <video autoplay loop muted>
+                <source src="https://s2.ssl.qhres2.com/static/dfeefadde568eab0.mp4" type="video/mp4">
+                您的浏览器版本太低，请切换浏览器
+            </video>
+            <div class="word-content">
+                <p class="big-word">极速</p>
+                <div class="line"></div>
+                <p class="mid-word">Chromium78全新内核</p>
+                <p class="small-word">性能强劲，快如闪电</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="section">
+            <!-- autoplay:自动播放 loop:无限播放 muted: 静音播放-->
+            <video autoplay loop muted>
+                <source src="https://s3.ssl.qhres2.com/static/9bebcedf292f327e.mp4" type="video/mp4">
+                您的浏览器版本太低，请切换浏览器
+            </video>
+            <div class="word-content">
+                <p class="big-word">极酷</p>
+                <div class="line"></div>
+                <p class="mid-word">暗夜炫黑模式</p>
+                <p class="small-word">定义酷，定义你</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="section">
+            <!-- autoplay:自动播放 loop:无限播放 muted: 静音播放-->
+            <video autoplay loop muted>
+                <source src="https://s1.ssl.qhres2.com/static/fdf92889c539303c.mp4" type="video/mp4">
+                您的浏览器版本太低，请切换浏览器
+            </video>
+            <div class="word-content">
+                <p class="big-word">极安全</p>
+                <div class="line"></div>
+                <p class="mid-word">DNS加密防劫持</p>
+                <p class="small-word">安全升级，肆意无忌</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="section">
+            <!-- autoplay:自动播放 loop:无限播放 muted: 静音播放-->
+            <video autoplay loop muted>
+                <source src="https://s1.ssl.qhres2.com/static/7e7f0ec4a0cc7a66.mp4" type="video/mp4">
+                您的浏览器版本太低，请切换浏览器
+            </video>
+            <div class="word-content">
+                <p class="big-word">极世界</p>
+                <div class="line"></div>
+                <p class="mid-word">4K高清视频播放</p>
+                <p class="small-word">还原真实之美，尽显万物之本</p>
+                <a href="#"></a>
+            </div>
+            <!-- 底部模块 -->
+            <div class="footer">
+                Copyright © 2005-2019 360.CN All Rights Reserved 360互联网安全中心 隐私权政策 京ICP证080047号 <br>
+                <img src="./images/icon.png" alt=""> 京公网安备 11000002000006号
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    $(function() {
+        $('#dowebok').fullpage({
+            'navigation': true,
+            //滚动到当前屏幕，文字模块渐渐显示出来
+            //想让文字一开始就出现谈出，要先隐藏文字模块
+            afterLoad: function() {
+                $(this).find('.word-content').fadeIn();
+            },
+            //离开当前屏幕，文字模块渐渐淡出
+            onLeave: function() {
+                $(this).find('.word-content').fadeOut();
+            }
+        });
+    });
+</script>

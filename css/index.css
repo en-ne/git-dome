@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 约束屏幕最小尺寸 */
+
+body {
+    min-width: 1200px;
+}
+
+
+/* 去除链接默认下划线 */
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #010001;
+}
+
+
+/* 固定导航栏开始 */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 999;
+    background-color: #010001;
+    /* background-color: pink; */
+}
+
+.headerContent {
+    width: 1200px;
+    height: 48px;
+    /* background-color: palegoldenrod; */
+    margin: auto;
+}
+
+.headerContent img {
+    float: left;
+    margin-top: 10px;
+}
+
+.nav {
+    float: right;
+    height: 48px;
+    /*文字垂直居中*/
+    line-height: 48px;
+}
+
+.nav a {
+    margin-left: 35px;
+    color: #a4a4a4;
+}
+
+.section1 {
+    background-image: url(../images/section1_bg.jpg);
+    /* 使背景图片水平垂直居中 */
+    background-position: center;
+}
+
+.title-box {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+    width: 100%;
+    /* background-color: pink; */
+}
+
+.title-box p {
+    font-size: 60px;
+    /* 文字水平居中 */
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    /* 字间距2px */
+    letter-spacing: 2px;
+}
+
+.title-box a {
+    display: block;
+    width: 300px;
+    height: 60px;
+    background-image: url(../images/links.png);
+    margin: auto;
+}
+
+.title-box a:hover {
+    /* 精灵图x轴往左走300px走一个盒子的宽度 */
+    background-position: -300px 0;
+}
+
+
+/* 第一个小球 */
+
+.ball1 {
+    position: absolute;
+    width: 13.2%;
+    top: 22.7%;
+    left: 17%;
+    /* animation:动画名称 持续时间 匀速 播放次数 跑马灯来回走 */
+    animation: ballAnimation 2s linear infinite alternate;
+}
+
+.ball2 {
+    position: absolute;
+    width: 22.3%;
+    top: 49.8%;
+    left: 68.16%;
+    animation: ballAnimation 1s linear infinite alternate;
+}
+
+.ship {
+    position: absolute;
+    width: 6.3%;
+    top: 40.18%;
+    left: 67.96%;
+    animation: shipRotate 5s linear infinite alternate;
+}
+
+
+/* 创建动画 */
+
+@keyframes ballAnimation {
+    from {
+        margin: 0;
+    }
+    to {
+        margin-top: -25px;
+    }
+}
+
+@keyframes shipRotate {
+    form {
+        /* 正数是顺时针，负数是逆时针旋转 */
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+
+/* 第二屏视频 */
+
+.section video {
+    width: 100%;
+    height: 100%;
+}
+
+.word-content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    /* background-color: pink; */
+    transform: translateY(-50%);
+}
+
+.section {
+    color: #fff;
+}
+
+
+/* 线条的做法 */
+
+.line {
+    width: 38px;
+    height: 3px;
+    background-color: #5e5e5e;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.big-word {
+    font-size: 60px;
+}
+
+.mid-word {
+    font-size: 36px;
+}
+
+.small-word {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.word-content a {
+    display: block;
+    width: 200px;
+    height: 48px;
+    margin-top: 50px;
+    background-image: url(../images/link2.png);
+}
+
+.word-content a:hover {
+    background-position: -200px 0;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #131416;
+    text-align: center;
+    padding-top: 20px;
+    color: #4a4a4a;
+    line-height: 22px;
+    font-size: 12px;
+}
+
+.footer img {
+    /* 文字和图片垂直居中对齐 */
+    vertical-align: middle;
+}
+
+
+/* 修改小圆点的颜色 */
+
+#fp-nav ul li a.active span {
+    background-color: rgba(255, 255, 255, 0.8);
+}
